@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz de Python</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="menu" class="pantalla">
+        <h1>QUIZ DE PYTHON</h1>
+        <button onclick="iniciarQuiz('Basico')">Nivel Básico</button>
+        <button onclick="iniciarQuiz('Intermedio')">Nivel Intermedio</button>
+        <button onclick="iniciarQuiz('Avanzado')">Nivel Avanzado</button>
+    </div>
+
+    <div id="quiz" class="pantalla oculto">
+        <h2 id="nivel"></h2>
+        <p id="pregunta"></p>
+
+        <div id="opciones"></div>
+
+        <button onclick="responder()">Responder</button>
+    </div>
+
+    <div id="resultado" class="pantalla oculto">
+        <h1>Resultado Final</h1>
+        <p id="textoResultado"></p>
+        <button onclick="volverMenu()">Volver al menú</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
