@@ -1,97 +1,103 @@
-const preguntas = {
-    "Basico": [
-        { pregunta: "¿Qué imprime print(2 + 2)?", opciones: ["3", "4", "5"], respuesta: "4" },
-        { pregunta: "¿Cuál es el tipo de dato de 'Hola'?", opciones: ["int", "float", "str"], respuesta: "str" },
-        { pregunta: "¿Qué símbolo se usa para comentarios?", opciones: ["//", "#", "/* */"], respuesta: "#" },
-        { pregunta: "¿Qué imprime print(10 / 2)?", opciones: ["2", "5", "20"], respuesta: "5" },
-        { pregunta: "¿Qué función sirve para obtener la longitud de un texto?", opciones: ["count()", "size()", "len()"], respuesta: "len()" }
-    ],
-
-    "Intermedio": [
-        { pregunta: "¿Qué estructura repite código?", opciones: ["if", "while", "def"], respuesta: "while" },
-        { pregunta: "¿Qué palabra define una función?", opciones: ["func", "def", "call"], respuesta: "def" },
-        { pregunta: "¿Qué tipo de dato es [1, 2, 3]?", opciones: ["lista", "tupla", "diccionario"], respuesta: "lista" },
-        { pregunta: "¿Qué significa 'elif'?", opciones: ["Else if", "Else function", "End loop"], respuesta: "Else if" },
-        { pregunta: "¿Qué operador verifica si un elemento está en una lista?", opciones: ["in", "has", "contains"], respuesta: "in" }
-    ],
-
-    "Avanzado": [
-        { pregunta: "¿Qué hace *args en una función?", opciones: ["Recibe varios argumentos", "Es un comentario", "Finaliza la función"], respuesta: "Recibe varios argumentos" },
-        { pregunta: "¿Qué es una lambda?", opciones: ["Una variable", "Una función anónima", "Un ciclo"], respuesta: "Una función anónima" },
-        { pregunta: "¿Qué hace try/except?", opciones: ["Optimiza código", "Controla errores", "Declara funciones"], respuesta: "Controla errores" },
-        { pregunta: "¿Qué palabra se utiliza para crear una clase?", opciones: ["class", "object", "struct"], respuesta: "class" },
-        { pregunta: "¿Qué método devuelve las claves de un diccionario?", opciones: ["keys()", "items()", "values()"], respuesta: "keys()" }
-    ]
-};
-
-
-let nivelActual = "";
-let preguntasNivel = [];
-let indice = 0;
-let puntos = 0;
-
-function mostrar(pantalla) {
-    document.querySelectorAll(".pantalla").forEach(p => p.classList.add("oculto"));
-    document.getElementById(pantalla).classList.remove("oculto");
+/* ======== ESTILO GENERAL ======== */
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: #e8f1ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-function iniciarQuiz(nivel) {
-    nivelActual = nivel;
-    preguntasNivel = [...preguntas[nivel]].sort(() => Math.random() - 0.5);
-    indice = 0;
-    puntos = 0;
-
-    mostrarPregunta();
-    mostrar("quiz");
+/* Centrado de pantallas */
+.pantalla {
+    width: 92%;
+    max-width: 550px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    text-align: center;
 }
 
-function mostrarPregunta() {
-    const p = preguntasNivel[indice];
-
-    document.getElementById("nivel").innerText = "Nivel: " + nivelActual;
-    document.getElementById("pregunta").innerText = p.pregunta;
-
-    const contenedor = document.getElementById("opciones");
-    contenedor.innerHTML = "";
-
-    p.opciones.forEach(op => {
-        contenedor.innerHTML += `
-            <label>
-                <input type="radio" name="op" value="${op}">
-                ${op}
-            </label><br>
-        `;
-    });
+.oculto {
+    display: none;
 }
 
-function responder() {
-    const seleccion = document.querySelector("input[name='op']:checked");
-
-    if (!seleccion) {
-        alert("Selecciona una opción");
-        return;
-    }
-
-    if (seleccion.value === preguntasNivel[indice].respuesta) {
-        puntos++;
-    }
-
-    indice++;
-
-    if (indice < preguntasNivel.length) {
-        mostrarPregunta();
-    } else {
-        mostrarResultado();
-    }
+/* ======== TÍTULOS ======== */
+h1, h2 {
+    margin-top: 0;
+    color: #2d4a8a;
 }
 
-function mostrarResultado() {
-    document.getElementById("textoResultado").innerText =
-        `Aciertos: ${puntos} de ${preguntasNivel.length}`;
-
-    mostrar("resultado");
+.pregunta {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 20px 0;
 }
 
-function volverMenu() {
-    mostrar("menu");
+/* ======== BOTONES ======== */
+button {
+    background: #4a7bff;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 8px 0;
+    width: 80%;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    background: #355fe0;
+}
+
+.botones button {
+    width: 90%;
+}
+
+/* ======== OPCIONES BONITAS ======== */
+.opciones {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.opciones label {
+    display: flex;
+    align-items: center;
+    background: #f0f4ff;
+    border: 2px solid #cad8ff;
+    padding: 12px;
+    border-radius: 10px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.2s ease;
+    font-size: 16px;
+}
+
+.opciones label:hover {
+    background: #dce7ff;
+    border-color: #8ab3ff;
+}
+
+/* Ocultar radio original */
+.opciones input[type="radio"] {
+    transform: scale(1.4);
+    margin-right: 12px;
+}
+
+/* ======== RELOJ ======== */
+#reloj {
+    font-size: 15px;
+    font-weight: bold;
+    color: #4967c4;
+}
+
+/* ======== RESULTADO ======== */
+#textoResultado, #tiempoFinal {
+    font-size: 18px;
+    margin-bottom: 15px;
 }
