@@ -15,19 +15,21 @@
             <button onclick="iniciarQuiz('Intermedio')">Nivel Intermedio</button>
             <button onclick="iniciarQuiz('Avanzado')">Nivel Avanzado</button>
         </div>
-        <p class="nota">No puedes avanzar hasta responder correctamente. Cronómetro total activo durante todo el quiz.</p>
+        <p class="nota">NO PUEDES AVANZAR HASTA CONTESTAR CORRECTAMENTE. </p>
     </div>
 
     <div id="quiz" class="pantalla oculto">
         <h2 id="nivel"></h2>
         <p id="pregunta" class="pregunta"></p>
 
+        <!-- Opciones -->
         <div id="opciones" class="opciones"></div>
 
-        <div class="controles">
-            <button onclick="responder()">Responder</button>
-            <span id="reloj">Tiempo: 0s</span>
-        </div>
+        <!-- Botón de respuesta -->
+        <button onclick="responder()">Responder</button>
+
+        <!-- Tiempo abajo -->
+        <div id="reloj" class="tiempoAbajo">Tiempo: 0s</div>
     </div>
 
     <div id="resultado" class="pantalla oculto">
@@ -40,5 +42,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-
-
