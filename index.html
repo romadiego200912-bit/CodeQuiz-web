@@ -1,103 +1,44 @@
-/* ======== ESTILO GENERAL ======== */
-body {
-    font-family: "Poppins", Arial, sans-serif;
-    background: #e8f1ff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Quiz de Python</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-/* Centrado de pantallas */
-.pantalla {
-    width: 92%;
-    max-width: 550px;
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-    text-align: center;
-}
+    <div id="menu" class="pantalla">
+        <h1>QUIZ DE PYTHON</h1>
+        <div class="botones">
+            <button onclick="iniciarQuiz('Basico')">Nivel Básico</button>
+            <button onclick="iniciarQuiz('Intermedio')">Nivel Intermedio</button>
+            <button onclick="iniciarQuiz('Avanzado')">Nivel Avanzado</button>
+        </div>
+        <p class="nota">No puedes avanzar hasta responder correctamente. Cronómetro total activo durante todo el quiz.</p>
+    </div>
 
-.oculto {
-    display: none;
-}
+    <div id="quiz" class="pantalla oculto">
+        <h2 id="nivel"></h2>
+        <p id="pregunta" class="pregunta"></p>
 
-/* ======== TÍTULOS ======== */
-h1, h2 {
-    margin-top: 0;
-    color: #2d4a8a;
-}
+        <div id="opciones" class="opciones"></div>
 
-.pregunta {
-    font-size: 20px;
-    font-weight: 600;
-    margin: 20px 0;
-}
+        <div class="controles">
+            <button onclick="responder()">Responder</button>
+            <span id="reloj">Tiempo: 0s</span>
+        </div>
+    </div>
 
-/* ======== BOTONES ======== */
-button {
-    background: #4a7bff;
-    border: none;
-    color: white;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin: 8px 0;
-    width: 80%;
-    transition: 0.2s ease;
-}
+    <div id="resultado" class="pantalla oculto">
+        <h1>Resultado Final</h1>
+        <p id="textoResultado"></p>
+        <p id="tiempoFinal"></p>
+        <button onclick="volverMenu()">Volver al menú</button>
+    </div>
 
-button:hover {
-    background: #355fe0;
-}
+    <script src="script.js"></script>
+</body>
+</html>
 
-.botones button {
-    width: 90%;
-}
 
-/* ======== OPCIONES BONITAS ======== */
-.opciones {
-    text-align: left;
-    margin-top: 15px;
-}
-
-.opciones label {
-    display: flex;
-    align-items: center;
-    background: #f0f4ff;
-    border: 2px solid #cad8ff;
-    padding: 12px;
-    border-radius: 10px;
-    margin: 10px 0;
-    cursor: pointer;
-    transition: 0.2s ease;
-    font-size: 16px;
-}
-
-.opciones label:hover {
-    background: #dce7ff;
-    border-color: #8ab3ff;
-}
-
-/* Ocultar radio original */
-.opciones input[type="radio"] {
-    transform: scale(1.4);
-    margin-right: 12px;
-}
-
-/* ======== RELOJ ======== */
-#reloj {
-    font-size: 15px;
-    font-weight: bold;
-    color: #4967c4;
-}
-
-/* ======== RESULTADO ======== */
-#textoResultado, #tiempoFinal {
-    font-size: 18px;
-    margin-bottom: 15px;
-}
