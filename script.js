@@ -11,19 +11,19 @@ const preguntas = {
     ],
 
     "Intermedio": [
-        { pregunta: "¿Para qué se utiliza la estructura if en Python?", opciones: ["if", "while", "def"], respuesta: "while" },
-        { pregunta: "¿Qué palabra define una función?", opciones: ["Para repetir un bloque de código", "Para ejecutar una acción si se cumple una condición", "Para crear una variable"], respuesta: "Para ejecutar una acción si se cumple una condición" },
-        { pregunta: "¿Qué palabra se usa para evaluar una segunda condición si la primera no se cumple?", opciones: =["then", "else if", "elif"], respuesta: "elif" },
-        { pregunta: "¿Qué operador se usa para indicar “mayor que”?", opciones: ["<", ">", "="], respuesta: ">" },
+        { pregunta: "¿Para qué se utiliza la estructura if en Python?", opciones: ["Para repetir un bloque de código", "Para ejecutar una acción si se cumple una condición", "Para crear una variable"], respuesta: "Para ejecutar una acción si se cumple una condición" },
+        { pregunta: "¿Qué palabra se usa para evaluar una segunda condición si la primera no se cumple?", opciones: ["then", "else if", "elif"], respuesta: "elif" },
+        { pregunta: "¿Qué operador se usa para indicar mayor que?", opciones: ["<", ">", "="], respuesta: ">" },
+        { pregunta: "¿Qué operador se usa para indicar menor que?", opciones: [">", "<", "=="], respuesta: "<" },
         { pregunta: "¿Cuándo se ejecuta la instrucción else?", opciones: ["Cuando la condición del if es verdadera", "Cuando ninguna de las condiciones anteriores se cumple", "Siempre se ejecuta"], respuesta: "Cuando ninguna de las condiciones anteriores se cumple" },
     ],
 
     "Avanzado": [
-        { pregunta: "¿Qué hace *args en una función?", opciones: ["Recibe varios argumentos", "Es un comentario", "Finaliza la función"], respuesta: "Recibe varios argumentos" },
-        { pregunta: "¿Qué es una lambda?", opciones: ["Una variable", "Una función anónima", "Un ciclo"], respuesta: "Una función anónima" },
-        { pregunta: "¿Qué hace try/except?", opciones: ["Optimiza código", "Controla errores", "Declara funciones"], respuesta: "Controla errores" },
-        { pregunta: "¿Qué palabra se utiliza para crear una clase?", opciones: ["class", "object", "struct"], respuesta: "class" },
-        { pregunta: "¿Qué método devuelve las claves de un diccionario?", opciones: ["keys()", "items()", "values()"], respuesta: "keys()" },
+        { pregunta: "¿Para qué se utiliza el ciclo while en Python?", opciones: ["Para repetir un bloque de código mientras se cumpla una condición", "Para definir una función", "Para imprimir en pantalla"], respuesta: "Para repetir un bloque de código mientras se cumpla una condición" },
+        { pregunta: "¿Qué ciclo se usa cuando se conoce la cantidad exacta de repeticiones?", opciones: ["while", "if", "for"], respuesta: "for" },
+        { pregunta: "¿Qué palabra complementa una condición cuando no se cumple el if?", opciones: ["elif", "else", "while"], respuesta: "else" },
+        { pregunta: "Si en una estructura if se evalúa 5 + 3 > 6, ¿qué ocurre?", opciones: ["La condición es verdadera", "La condición es falsa", "Genera error"], respuesta: "La condición es verdadera" },
+        { pregunta: "En un ciclo while con la condición contador < 3, si contador inicia en 0 y aumenta de 1 en 1, ¿cuántas veces se ejecuta el ciclo?", opciones: ["2 veces", "3 veces", "4 veces"], respuesta: "3 veces" },
    ],
 };
 
