@@ -3,11 +3,11 @@
 // ------------------------------
 const preguntas = {
     "Basico": [
-{ pregunta: "¿Qué tipo de dato es la variable nombre = \"Luis\"?",  opciones: ["int", "str", "float"],  respuesta: "str" },
-{ pregunta: "¿Qué tipo de dato es edad = 16?", opciones: ["float", "bool", "int"], respuesta: "int"},
-{ pregunta: "¿Qué tipo de dato es promedio = 8.5?", opciones: ["float", "int", "str"], respuesta: "float" },
-{ pregunta: "¿Qué tipo de dato es aprobado = True?", opciones: ["str", "bool", "int"], respuesta: "bool" },
-{ pregunta: "En materias = [\"Mate\", \"Historia\", \"Inglés\"], ¿qué tipo de estructura es materias?", opciones: ["tuple", "list", "str"], respuesta: "list" },
+       { pregunta: "¿Qué tipo de dato es la variable nombre = \"Luis\"?",  opciones: ["int", "str", "float"],  respuesta: "str" },
+       { pregunta: "¿Qué tipo de dato es edad = 16?", opciones: ["float", "bool", "int"], respuesta: "int"},
+       { pregunta: "¿Qué tipo de dato es promedio = 8.5?", opciones: ["float", "int", "str"], respuesta: "float" },
+       { pregunta: "¿Qué tipo de dato es aprobado = True?", opciones: ["str", "bool", "int"], respuesta: "bool" },
+       { pregunta: "En materias = [\"Mate\", \"Historia\", \"Inglés\"], ¿qué tipo de estructura es materias?", opciones: ["tuple", "list", "str"], respuesta: "list" },
     ],
 
     "Intermedio": [
