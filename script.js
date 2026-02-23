@@ -11,11 +11,11 @@ const preguntas = {
     ],
 
     "Intermedio": [
-        { pregunta: "¿Qué estructura repite código?", opciones: ["if", "while", "def"], respuesta: "while" },
-        { pregunta: "¿Qué palabra define una función?", opciones: ["func", "def", "call"], respuesta: "def" },
-        { pregunta: "¿Qué tipo de dato es [1, 2, 3]?", opciones: ["lista", "tupla", "diccionario"], respuesta: "lista" },
-        { pregunta: "¿Qué significa 'elif'?", opciones: ["Else if", "Else function", "End loop"], respuesta: "Else if" },
-        { pregunta: "¿Qué operador verifica si un elemento está en una lista?", opciones: ["in", "has", "contains"], respuesta: "in" },
+        { pregunta: "¿Para qué se utiliza la estructura if en Python?", opciones: ["if", "while", "def"], respuesta: "while" },
+        { pregunta: "¿Qué palabra define una función?", opciones: ["Para repetir un bloque de código", "Para ejecutar una acción si se cumple una condición", "Para crear una variable"], respuesta: "Para ejecutar una acción si se cumple una condición" },
+        { pregunta: "¿Qué palabra se usa para evaluar una segunda condición si la primera no se cumple?", opciones: =["then", "else if", "elif"], respuesta: "elif" },
+        { pregunta: "¿Qué operador se usa para indicar “mayor que”?", opciones: ["<", ">", "="], respuesta: ">" },
+        { pregunta: "¿Cuándo se ejecuta la instrucción else?", opciones: ["Cuando la condición del if es verdadera", "Cuando ninguna de las condiciones anteriores se cumple", "Siempre se ejecuta"], respuesta: "Cuando ninguna de las condiciones anteriores se cumple" },
     ],
 
     "Avanzado": [
